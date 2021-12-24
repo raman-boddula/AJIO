@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="icon" href="https://assets.ajio.com/static/img/favicon.ico">   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<title>Payments</title>
+    <style>
+         *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+        }
+        
+        .navbar{
+            top:0px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 15% 12% 40% 12% 15%;
+            border-bottom: 1px solid #e0e0e0;
+            position:fixed;
+            background-color: white;
+        }
+        #nav img {
+            height: 50px;
+            width:650px;
+            margin-top: 15px;
+        }
+        #cart{
+            width: 90%;
+            height: 80px;
+        }
+        #logo{
+            width: 80%;
+            margin-top: 18px;
+            margin-bottom: 15px;
+        }
+        #main{
+            margin-top: 8%;
+        }
+        
+        #main{
+            width: 70%;
+            margin-left: 15%;
+            display: grid;
+            grid-template-columns:67% 31%;
+            grid-gap: 3%;
+            padding:1% 1% 1% 0;
+        }
+        #bill{
+            background-color: #fafafa;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        #prod{
+            display: grid;
+            grid-template-columns: 49.5% 49.5%;
+            grid-gap: 1%;
+        }
+        #prod  div{
+            display: flex;
+            flex-direction: row;
+            border: 1px dashed black;
+            padding: 15px;
+            font-size: 13px;
+            height: 90px;
+        }
+        #ig{
+            margin:auto;
+            margin-right: 10px;
+            height: 20px;
+        }
+        #mode{
+            width: 70%;
+            margin-left: 15%;
+        }
+        #mode p{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .container{
+    box-sizing: border-box ;
+    margin-top: 30px;
+    width: 100%;
+    height: 550px;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content:space-around;
+}
+.container input {
+    border: 1px solid #e0e0e0;
+}
+#heading{margin-top: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        margin: auto;
+        border-bottom: 1px solid #e0e0e0;
+       
+    }
+    #heading > #cart{
+       height: 50px;
+       width: 350px;
+    }
+.container h1{
+    text-align: center;
+}
+
+.first-row{
+     display: flex;
+}
+
+
+.owner{
+    width: 100%;
+    margin-right: 40px;
+}
+
+.input-field{
+    border: 1px solid #999;
+}
+
+.input-field input{
+    width: 100%;
+    border:none;
+    outline: none;
+    padding: 10px;
+}
+
+.selection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection select{
+    padding: 10px 20px;
+}
+
+a{
+    background-color:#D5a249 ;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.5s;
+}
+a:hover{
+    background-color:#f89f04;
+}
+a:hover #confirm-btn{
+    background-color:#f89f04;
+}
+
+.cards img{
+    width: 100px;
+}
+.bord{
+    padding: 5%;
+    padding-bottom: 7%;
+}
+#confirm-btn{
+    background-color: #D5a249;
+    font-weight: 600;
+    border: none;
+    padding: 10px;
+}
+#need{
+    padding-top: 0.8%;
+}
+#mode{
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+}
+#paymentType{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+    height: 200px;
+    font-size: 15px;
+    font-weight: 600;
+}
+#paymentType :nth-child(1){
+    background-color: white;
+    padding:10px;
+    color: #D5a249;
+    border-top: 1px solid #f7efef;
+}
+#paymentType :nth-child(2) , #paymentType :nth-child(3) ,#paymentType :nth-child(4) ,#paymentType :nth-child(5){
+padding:10px;
+background-color: #ebe6e6;
+}
+#det1{
+            padding-left: 150px;
+        }
+        #det2{
+            padding-left: 110px;
+            color:#D5a249;
+        }
+        #det3{
+            padding-left: 185px;
+            color:#D5a249;
+        }
+        #det4{
+            padding-left: 130px;
+        }
+#heading {
+    width: 70%;
+    margin-left: 15%;
+    font-weight: 600;
+}
+#aNC{
+    font-size: 25px;
+}
+#finalF{
+    margin-top: 20px;
+}
+#visa_img {
+    width: 78px;
+    padding-bottom: 4px;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            
+        </div>
+        <div><img src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="logo" id="logo" width="80%"></div>
+        <div id="nav">
+            <img src="./images/banner2-1.png" id="cart" alt="">
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="main">
+        <div id="prod">
+           <div>
+               <img src="data:image/jpeg;base64,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" width="17%" id="ig" alt="">
+               <p>10% cashback (up to Rs 400) on a minimum purchase of Rs 1500 or more using Dhani One Freedom cards<span> T&C</span></p></div>
+           <div>
+            <img src="https://images.firstpost.com/fpimages/1200x800/fixed/jpg/2017/10/mobikwik-380.png" width="17%" alt="">   
+            <p>Up to Rs 500 cashback on making purchases worth Rs 999 or more using Mobikwik Wallet <span> T&C</span></p></div>
+        </div>
+        <div id="bill">
+            <h4 id="od">Order Details </h4>
+            <br><br><p>Bag Total <span id="det1">1</span></p> 
+            <br><p>Bag Discount <span id="det2">1</span></p>
+            <br><p>Delivery <span id="det3">1</span></p>
+            <br><br><h4>Total Amount <span id="det4">1</span></h4>
+        </div>
+       </div> 
+       <p id="heading">Select Payment Mode</p>
+       <div id="mode">
+           <div id="paymentType">
+            <div>Credit / Debit Card</div>
+            <div>NetBanking</div>
+            <div>Wallet</div>
+            <div>UPI</div>
+            <div>Cash On Delivery</div>
+           </div>
+           <div class="container">
+            <p id="aNC">Add New Card</p>
+            <div class="first-row">
+                <div class="owner">
+                    <h3>Name On Card</h3>
+                    <div class="input-field">
+                        <input type="text" id="owner" required>
+                    </div>
+                </div>
+                <div class="cvv">
+                    <h3>CVV</h3>
+                    <div class="input-field">
+                        <input type="password" id="cvv" required>
+                    </div>
+                </div>
+            </div>
+            <div class="second-row">
+                <div class="card-number">
+                    <h3>Card Number</h3>
+                    <div class="input-field">
+                        <input type="text" id="cardnum" required>
+                    </div>
+                </div>
+            </div>
+            <div class="third-row">
+                <h3>Card Expiry</h3>
+                <div class="selection">
+                    <div class="date">
+                        <select name="months" id="months" required>
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option>
+                            <option value="May">May</option>
+                            <option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option>
+                            <option value="Oct">Oct</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dec</option>
+                          </select>
+                          <select name="years" id="years">
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                          </select>
+                    </div>
+                    <div class="cards">
+                        <img src="https://www.logolynx.com/images/logolynx/38/38b8f2f2c2917b4118a8d0fc3ba1ed31.png" class="bord" alt="">
+                        <img src="http://pngimg.com/uploads/visa/visa_PNG10.png" alt="" id="visa_img">
+                        <img src="http://cdn.onlinewebfonts.com/svg/download_436832.png" alt="" class="bord">
+                    </div>
+                </div>    
+            </div>
+            <button id="confirm-btn" onclick="confirmPay(event)" >Confirm</button>
+        </div>
+       </div>
+       <div id="footer_division">
+  
+        </div>
+       
+</body>
+</html>
+<script>
+    var flag=true;
+    function confirmPay(e)
+    {
+        
+   var Name = document.getElementById("owner").value;
+   var Cvv = document.getElementById("cvv").value;
+   var CardNum = document.getElementById("cardnum").value;
+        e.preventDefault();
+        if(CardNum.length==16 && Cvv.length==3 &&flag==true){
+       // if((Name !="" || Cvv !="" || CardNum != "" ) && flag==true )
+            flag=false;
+            swal("Congratulations!", "Payment Successfull", "success")
+            setTimeout(()=>window.location.href="summary.html",3000); 
+        }
+        else
+        {
+            swal("Oops!","please enter a valid details","warning")
+        }
+
+    }
+    var da=[];
+    function getData(){
+        var count=0;
+        var bagdiscount=0;
+        let discount=0;
+        var bagtotal=0;
+        fetch('http://localhost:2345/cart')
+        .then(response => response.json())
+        .then(data=>{
+            let d = data.cart;
+            d.forEach((el)=>{
+                
+                da.push(el);
+            });
+            console.log("d---",d)
+            d.forEach((el)=>{
+                let d=0;
+                let m=0;
+                bagdiscount+=Math.floor((el.product.MRP*el.product.discount)/100);
+                bagtotal+=+el.product.MRP;
+                discount+=+el.product.discount;
+            })
+            console.log('discount---->',discount)
+            
+            let bagDiscount = document.getElementById('det2');
+            bagDiscount.textContent="Rs. "+"- "+Math.round(bagdiscount);
+            
+            console.log("bagdiscount",bagdiscount)
+            let bagTotal = document.getElementById('det1');
+            bagTotal.textContent="Rs. "+bagtotal;
+            console.log("bgtotalla",bagtotal);
+            let totalPrice = document.getElementById('det4');
+            if(document.getElementById('det3').textContent !="Free")
+            {
+                totalPrice.textContent = Math.round(Number(document.getElementById('det3').textContent) + bagtotal-bagdiscount);
+            }else
+            {
+                totalPrice.textContent ="Rs. "+ Math.round(bagtotal-bagdiscount);
+            }
+            let delivery = document.getElementById('det3');
+            if(bagtotal-bagdiscount >1000)
+            {
+                delivery.textContent="Free";
+            }else
+            {
+                delivery.textContent=99;
+            }
+            console.log("da",da);
+            da.forEach((el)=>{
+                showData(el.product);
+            })
+            console.log("insides",bagtotal)
+        })
+        .catch(e=>console.log("e",e));
+    }
+    getData();
+</script>
+<script type="module">
+    import footer from "./components/footer.js";
+    let footer_division = document.getElementById("footer_division");
+    footer_division.innerHTML = footer();
+</script>
+<link rel="stylesheet" href="./styles/footer.css">

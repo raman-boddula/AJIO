@@ -1,0 +1,35 @@
+#navbar {
+    height: 88px;
+  }
+  #subnavbar > div:nth-child(2) > div:nth-child(1) > input {
+    border-radius: 20px;
+    width: 295px;
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid #333;
+    background-color: #fffded;
+  }
+  #add_to_bag_btn {
+    background-color: #d5a249;
+    width: 350px;
+    height: 50px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 85px;
+  }
+  .size_options {
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgb(223, 223, 223);
+  }
+  .size_options:hover {
+    border: 1px solid #2f4254;
+    background-color: #2f4254;
+    color: white;
+  }
+  .same_color1 {
+    color: #b19975;
+  }
+  #image1extra , #image2extra,#image3extra {
+    cursor: pointer;
+  }

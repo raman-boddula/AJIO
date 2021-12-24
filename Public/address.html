@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | AJIO</title>
+    <link rel="icon" href="https://assets.ajio.com/static/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+        }
+        
+        .navbar{
+            top:0px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 15% 12% 40% 10% 15%;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px;
+            position:fixed;
+            background-color: white;
+        }
+        #cart{
+            width: 60%;
+            margin-left: 13%;
+            height: 50px;
+        }
+        #main{
+            margin-top: 8%;
+        }
+        
+        #main{
+            width: 70%;
+            margin-left: 15%;
+            display: grid;
+            grid-template-columns:69% 31%;
+            grid-gap: 1%;
+            padding:1% 1% 1% 0;
+        }
+        #bill{
+            background-color: #fafafa;
+            padding: 1.5%;
+            font-weight: 500;
+            margin-top: 15px;
+            height: 400px;
+            padding: 10px;
+        }
+        #btn{
+            background-color: #D5a249;
+            /* padding: 15px 97px 15px 97px; */
+            margin-left: 30px;
+            height:60px;
+            width: 240px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #btn:hover{
+            background-color:  #D5a249;
+           border: 1px solid black;
+        }
+        #det1{
+            padding-left: 160px;
+        }
+        #det2{
+            padding-left: 110px;
+            color:#D5a249;
+        }
+        #det3{
+            padding-left: 185px;
+            color:#D5a249;
+        }
+        #det4{
+            padding-left: 130px;
+        }
+        #wallet{
+            margin:15px 0px 25px 30px;
+            background-color: #FEFBE4;
+            padding:10px;
+            color:#176D96;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        #od{
+            margin-top: 15px;
+        }
+        .fa-map-marker,.fa-cube{
+            font-size: 40px;
+        }
+        #first{
+            display: grid;
+            grid-template-columns: 5% 80%;
+        }
+        #first > div:nth-child(1) {
+            margin-left: -10px;
+            margin-top: 5px;
+        }
+        #first p{
+            margin-top: 5px;
+            color :#666666;
+        }
+        #second {
+            display: grid;
+            grid-template-columns: repeat(2,50%);
+            margin-top: 40px;
+        }
+        #second :nth-child(2){
+            margin:20px 50px 20px 50px;
+            border: 1px dashed black;
+            padding:20px;
+            border-radius: 5px;
+        }
+        #second  h4{
+            color: #176D96;
+            cursor: pointer;
+        }
+        #prodDetails{
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(2,50%);
+        }
+        #second button{
+            border:none;
+            font-size: 20px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .detail{
+            padding:10px;
+            display: grid;
+            grid-template-columns: 25% 75%;
+        }
+        .detail img{
+            width: 100%;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        .detail p {
+            padding-left: 10px;
+        }
+        .detail h5 {
+            padding-left: 10px;
+        }
+        .pop .overlay{
+            position: fixed;
+            top: 0;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background: rgba(0,0,0,0.8);
+            z-index: 1;
+            display: none;
+        }
+        .pop .content {
+            position: absolute;
+            top: 440px;
+            left: 82%;
+            border:1px solid rgb(201, 201, 201);
+            transform:translate(-50%,-50%) scale(0);
+            background-color: #fff;
+            width: 500px;
+            height: auto;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .pop .close-btn{
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            padding-bottom: 4px;
+            color: white;
+            background-color:black;
+            font-size:  25px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        .pop .active .overlay{
+            display: block;
+        }
+        .pop.active .content{
+            transition : all 300ms ease-in-out;
+            transform:translate(-50%,-50%) scale(1);
+        }
+         input {
+            margin-bottom: 20px;
+            width: 90%;
+            padding: 15px;
+            border: none;
+            border-bottom: 2px solid #D5a249;
+        }
+        #radi{
+            display: flex;
+            width: 80%;
+            margin-left: 10%;
+            justify-content: center;
+            flex: row;
+            font-size: 15px;
+        }
+        #buttons {
+            display: grid;
+            grid-template-columns: repeat(2,50%);
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 30px;
+            padding:10px 0px;
+        }
+        #buttons  button {
+            padding:10px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #buttons :nth-child(2){
+            background-color:#D5a249;
+        }
+        #addNew{
+            font-size: 30px;
+            text-align: left;
+            padding: 10px;
+        }
+        #aT{
+            margin: 20px;
+        }
+        .tag{
+            margin-left: 10px;
+            color: #D5a249;
+        }
+        .pName{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+    <!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
+    <div class="navbar">
+        <div>
+            
+        </div>
+        <div><img src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="logo" width="80%"></div>
+        <div id="nav">
+            <img src="./images/cart-2.png" id="cart" alt="">
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="main">
+    <div id="prod">
+        <div id="first">
+            <div><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+            <div><h4>Delivery Addresses</h4>
+            <p>We will deliver your order to this address</p>
+            </div>
+        </div>
+        <div id="second">
+            <div><button onclick="showPop()"> + Add Address</button></div>
+            <div>Est Delivery 19 - 22 Nov</div>
+        </div>
+
+        <div id="first">
+            <div><i class="fa fa-cube" aria-hidden="true"></i></div>
+            <div><h4> Expected Delivery</h4>
+            <p>Estimated delivery dates for your order</p>
+            </div>
+        </div>
+        <div id="prodDetails">
+
+        </div>
+    </div>
+    <div id="bill">
+        <span id="wallet">What is Ajio's Wallet ?</span>
+        <h4 id="od">Order Details </h4>
+        <br><br><p>Bag Total <span id="det1">1</span></p> 
+        <br><p>Bag Discount <span id="det2">1</span></p>
+        <br><p>Delivery <span id="det3">1</span></p>
+        <br><br><h4>Total Amount <span id="det4">1</span></h4>
+        <br> <button id='btn' onclick="getPayment()">PROCEED TO SHOPPING</button>
+    </div>
+
+    </div>
+    <div class="pop"id="pop-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="showPop()">&times;</div>
+            <p id="addNew">Add New Address</p>
+            <input type="text" id="name" placeholder="Name*" />
+            <input type="text" id="mobile" placeholder="Mobile*"/>
+            <input type="text" id="pincode" placeholder="Pincode*"/>
+            <input type="text" id="locality" placeholder="Locality/Area/Street*"/>
+            <input type="text" id="flat" placeholder="Flat Number / Building Name*"/>
+            <input type="text" id="landmark" placeholder="Landmark*"/>
+            <input type="text" id="city" placeholder="City*"><input type="text" id="state" placeholder="State*"/>
+            <h2 id="aT">Address Type</h2>
+            <div id="radi">
+            <input type="radio" id="home" name="drone" value="dewey">
+            <label for="dewey">Home</label>
+            <input type="radio" id="work" name="drone" value="dewey">
+            <label for="dewey">Work</label>
+            <input type="radio" id="others" name="drone" value="dewey">
+            <label for="dewey">Others</label>
+
+              </div>
+            <div id="buttons">
+            <button onclick="refresh()">Reset</button>  
+            <button onclick="getPayment()">Save & Continue</button>
+            </div>  
+        </div>
+    </div>
+</body>
+</html>
+<script>
+        function showPop(){
+        document.getElementById('pop-1').classList.toggle("active");
+    }
+    var da=[];
+    function getData(){
+        var count=0;
+        var bagdiscount=0;
+        let discount=0;
+        var bagtotal=0;
+        fetch('http://localhost:2345/cart')
+        .then(response => response.json())
+        .then(data=>{
+            let d = data.cart;
+            d.forEach((el)=>{
+                
+                da.push(el);
+            });
+            console.log("d---",d)
+            d.forEach((el)=>{
+                let d=0;
+                let m=0;
+                bagdiscount+=Math.floor((el.product.MRP*el.product.discount)/100);
+                bagtotal+=+el.product.MRP;
+                discount+=+el.product.discount;
+            })
+            console.log('discount---->',discount)
+            
+            let bagDiscount = document.getElementById('det2');
+            bagDiscount.textContent="Rs. "+"- "+Math.round(bagdiscount);
+            
+            console.log("bagdiscount",bagdiscount)
+            let bagTotal = document.getElementById('det1');
+            bagTotal.textContent="Rs. "+bagtotal;
+            console.log("bgtotalla",bagtotal);
+            let totalPrice = document.getElementById('det4');
+            if(document.getElementById('det3').textContent !="Free")
+            {
+                totalPrice.textContent = Math.round(Number(document.getElementById('det3').textContent) + bagtotal-bagdiscount);
+            }else
+            {
+                totalPrice.textContent ="Rs. "+ Math.round(bagtotal-bagdiscount);
+            }
+            let delivery = document.getElementById('det3');
+            if(bagtotal-bagdiscount >1000)
+            {
+                delivery.textContent="Free";
+            }else
+            {
+                delivery.textContent=99;
+            }
+            console.log("da",da);
+            da.forEach((el)=>{
+                showData(el.product);
+            })
+            console.log("insides",bagtotal)
+        })
+        .catch(e=>console.log("e",e));
+    }
+    getData();
+    let parent = document.getElementById('prodDetails')
+    function showData(product){
+            let mdiv = document.createElement('div');
+            mdiv.setAttribute('class','detail')
+            let div = document.createElement('div');
+            let img = document.createElement('img');
+            img.src=product.display_img;
+            let div2 = document.createElement('div');
+            let h3 = document.createElement('p');
+            h3.setAttribute('class','pName')
+            h3.textContent=product.brand+" - "+product.name;
+            let pri = document.createElement('h5');
+            pri.setAttribute('class','tag')
+            pri.textContent="Rs. "+product.price;
+            div.append(img);
+            div2.append(h3,pri);
+            mdiv.append(div,div2)
+            parent.append(mdiv)
+    }
+    function getPayment()
+    {
+        window.location.href="payment.html";
+    }
+    function refresh() {
+        window.location.reload();
+    }
+</script>

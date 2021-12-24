@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar/Footer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar_division">
+       
+    </div>
+    <div id="height">
+        <h1>HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+        <h1> HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</h1>
+    </div>
+    <button onclick="popupPoductDetails()">Click me</button>
+    <div id="popupBackgroundBlack">
+      <div id="popupProductDetails">
+        <div>
+          <img src="https://assets.ajio.com/medias/sys_master/root/20210824/qnyN/6124089d7cdb8cb824031048/performax_navy_blue_running_zip-front_dobby_jacket.jpg" id="image1extra" onclick="displayImage1()">
+          <img src="https://assets.ajio.com/medias/sys_master/root/20210824/qnyN/6124089d7cdb8cb824031048/performax_navy_blue_running_zip-front_dobby_jacket.jpg" id="image2extra" onclick="displayImage2()">
+          <img src="https://assets.ajio.com/medias/sys_master/root/20210824/qnyN/6124089d7cdb8cb824031048/performax_navy_blue_running_zip-front_dobby_jacket.jpg" id="image3extra" onclick="displayImage3()">
+        </div>
+        <div>
+          <img src="https://assets.ajio.com/medias/sys_master/root/20210824/qnyN/6124089d7cdb8cb824031048/performax_navy_blue_running_zip-front_dobby_jacket.jpg" id="mainDisplayImage">
+        </div>
+        <div>
+          <div onclick="closeDetailsDiv()">
+            <span class="material-icons-outlined">
+              close
+            </span>
+          </div>
+          <div>
+            <p class="same_color1" id="brandName">PERFORMAX</p>
+            <p id="productTitle">Panelled Zip-Front Training Tracksuit Jacket</p>
+            <p id="productPrice">Rs. 1199</p>
+            <p class="same_color1" id="productPriceOff">Rs.1499 (20% off)</p>
+            <p id="gst_p">Additional GST may apply</p>
+          </div>
+          <div>
+            <img src="./images/offers.JPG">
+            <p id="productColor">Teal</p>
+          </div>
+          <div>
+            <div class="avaliable_sizes" id="s" onclick="productSizeSelect('s')">S</div>
+            <div class="avaliable_sizes" id="m" onclick="productSizeSelect('m')">M</div>
+            <div class="avaliable_sizes" id="l" onclick="productSizeSelect('l')">L</div>
+            <div class="avaliable_sizes" id="xl" onclick="productSizeSelect('xl')">XL</div>
+            <div class="avaliable_sizes" id="xxl" onclick="productSizeSelect('xxl')">XXL</div>
+          </div>
+          <div>
+            <button onclick="addProductTocart()">ADD TO BAG</button>
+            <button onclick="displayProductDetails()">PRODUCT DETAILS</button>
+          </div>
+          <div>
+            <img src="./images/social_media_icons.JPG">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer_division">
+  
+    </div>
+</body>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    let navbar_division = document.getElementById("navbar_division");
+    navbar_division.innerHTML = navbar();
+</script>
+<script type="module">
+    import footer from "./components/footer.js";
+    let footer_division = document.getElementById("footer_division");
+    footer_division.innerHTML = footer();
+</script>
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<script src="./scripts/navbar.js"></script>
+<script src="./scripts/singleProductView.js"></script>
+<link rel="stylesheet" href="./styles/popupDetails.css">
+</html>

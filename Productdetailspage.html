@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AJIO</title>
+    <link rel="icon" href="https://assets.ajio.com/static/img/favicon.ico">  
+    <link rel="stylesheet" href="./styles/productdetails.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar_division"></div>
+    <nav class="bg-white mt-24">
+      <div class="bg-white h-12 mt-20">
+        <div class="ml-24 flex w-3/5 text-gray-400 text-sm">
+          <div class="">Home /&nbsp</div>
+
+          <div class="">Men /&nbsp</div>
+
+          <div class="">Western Wear /&nbsp</div>
+
+          <div class="">Jackets & Coats /&nbsp</div>
+          <div class=""><p id="top_divoneline">Hathered Hoodie with Split Kangaroo Packet</p></div>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <div class="flex">
+        <div class="flex w-3/5 justify-evenly">
+          <div class="ml-24 mt-40 w-1/5 bg-white">
+            <div>
+              <img
+                class="w-20"
+                src="https://assets.ajio.com/medias/sys_master/root/20210119/Npqa/6005db8caeb269698150b7a6/-78Wx98H-441100195-olivegreen-MODEL.jpg"
+                id="image1extra" onclick="displayImage1()"/>
+            </div>
+            <div class="mt-4">
+              <img
+              class="w-20"
+                src="https://assets.ajio.com/medias/sys_master/root/20210119/c1Q7/6005e464aeb269698150d0f0/-78Wx98H-441100195-olivegreen-MODEL2.jpg"
+                id="image2extra" onclick="displayImage2()"/>
+            </div>
+            <div class="mt-4">
+              <img
+              class="w-20"
+                src="https://assets.ajio.com/medias/sys_master/root/20210119/QiZh/6005dafa7cdb8c1f142b683c/-78Wx98H-441100195-olivegreen-MODEL3.jpg"
+                id="image3extra" onclick="displayImage3()"/>
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://assets.ajio.com/medias/sys_master/root/20210824/qnyN/6124089d7cdb8cb824031048/performax_navy_blue_running_zip-front_dobby_jacket.jpg"
+              id="mainDisplayImage"/>
+            <div class="text-gray-400">
+              Our model wears a Size Medium, with Height 6'1" and Chest 38"
+            </div>
+            <div class="mt-10"><img src="./images/Capture.PNG" alt="  " /></div>
+          </div>
+        </div>
+        <div class="w-1/3">
+          <h1 class="text-center font-medium text-lg same_color1" id="brandName">PERFOMAX</h1>
+          <h1 class="text-center font-medium text-lg mb-2" id="productTitle">
+            Heathered Hoodie with Split Kangaroo Pocket
+          </h1>
+          <div>
+            <!-- <img class="w-5/8" src="images/img1.png" alt="  " /> -->
+            <h1 class="text-center font-medium text-2xl" id="productPrice">Rs. 490</h1>
+            <h1 class="text-center same_color1" id="productPriceOff">Rs. 999(20%off)</h1>
+            <p class="text-center text-xs text-gray-400 mt-2">
+              Price inclusive of all taxes
+            </p>
+          </div>
+          <div>
+            <img src="./images/offers.JPG" class="w-64 ml-32 mt-2 mb-2" />
+          </div>
+          <h1 class="text-center font-semibold" id="productColor">Olive-Green</h1>
+          <!-- <div class="flex w-2/5 ml-40 mt-4 justify-between">
+            <div
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-green-500
+              "
+            ></div>
+            <div
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-red-500
+              "
+            ></div>
+            <div
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-yellow-500
+              "
+            ></div>
+            <div
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-black
+              "
+            ></div>
+          </div> -->
+          <h1 class="text-center mt-4">Select Size</h1>
+          <div class="flex w-3/5 ml-24 mt-4 justify-between">
+            <div
+            id="s" onclick="productSizeSelect('s')"
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-gray-200
+                size_options
+              "
+            >
+              S
+            </div>
+            <div
+            id="m" onclick="productSizeSelect('m')"
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-gray-200
+                size_options
+              "
+            >
+              M
+            </div>
+            <div
+            id="l" onclick="productSizeSelect('l')"
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-gray-200
+                size_options
+              "
+            >
+              L
+            </div>
+            <div
+            id="xl" onclick="productSizeSelect('xl')"
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-gray-500
+                size_options
+              "
+            >
+              XL
+            </div>
+            <div
+            id="xxl" onclick="productSizeSelect('xxl')"
+              class="
+                rounded-full
+                h-10
+                w-10
+                flex
+                items-center
+                justify-center
+                bg-gray-500
+                size_options
+              "
+            >
+              XXL
+            </div>
+          </div>
+          <div>
+            <img class="w-80 ml-24 mt-10 mb-2" src="./images//img2.PNG" alt="  " />
+          </div>
+          <button id="add_to_bag_btn" onclick="addProductTocart()">ADD TO BAG</button>
+          <h1 class="text-center mt-2 text-gray-400">
+            HANDPICKED STYLES | ASSURED QUALITY
+          </h1>
+
+          <!-- <button
+            class="
+              uppercase
+              font-bold
+              ml-24
+              border-solid
+              mt-8
+              bg-gray-200
+              text-white
+              font-semibold
+              py-4
+              px-36
+              rounded
+              ring ring-yellow-600
+            "
+          >
+            <h1 class="text-gray-700">Save to Closet</h1>
+          </button> -->
+          <h1 class="ml-24 mt-10 font-bold text-blue-600">Product Details</h1>
+          <ul class="ml-32 mt-2 font-bold list-disc">
+            <li class="font-semibold text-gray-400">Antibacterial</li>
+            <li class="font-semibold text-gray-400">Brand typographic print</li>
+            <li class="font-semibold text-gray-400">Regular Fit</li>
+            <li class="font-semibold text-gray-400">Machine wash</li>
+            <li class="font-semibold text-gray-400">Polyester</li>
+            <li class="font-semibold text-gray-400">Universal</li>
+            <li class="font-semibold text-gray-400">
+              Product Code: 441100195002
+            </li>
+            <li class="font-semibold text-gray-400">About PERFORMAX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ml-60"><img src="./images/img4.PNG" alt="  " /></div>
+    </div>
+    <div class="mt-0 ml-4">
+      <button
+        class="
+          uppercase
+          font-bold
+          ml-10
+          border-solid
+          mt-8
+          bg-gray-200
+          text-white
+          font-semibold
+          py-4
+          px-32
+          rounded
+        "
+      >
+        <h1 class="text-gray-700">All jackets & Coats ></h1>
+      </button>
+      <button
+        class="
+          uppercase
+          font-bold
+          ml-8
+          border-solid
+          mt-8
+          bg-gray-200
+          text-white
+          font-semibold
+          py-4
+          px-32
+          rounded
+        "
+      >
+        <h1 class="text-gray-700">Styles Hoddies & Tracks ></h1>
+      </button>
+      <button
+        class="
+          uppercase
+          font-bold
+          ml-8
+          border-solid
+          mt-8
+          bg-gray-200
+          text-white
+          font-semibold
+          py-4
+          px-32
+          rounded
+        "
+      >
+        <h1 class="text-gray-700">Brand : Performax ></h1>
+      </button>
+    </div>
+    <div class="mt-8">
+      <div class="ml-60"><img src="./images//img5.PNG" alt="  " /></div>
+    </div>
+    <div class="grid grid-cols-4 ml-24 mt-8">
+      <div>
+        <img
+          class="ml-12"
+          src="https://assets.ajio.com/medias/sys_master/root/20201212/bGqT/5fd3d405f997dd8c83c78bb9/teamspirit-olive-green-gillets-sleeveless-zip-front-jacket.jpg"
+        />
+        <h1 class="text-center text-yellow-400 font-semibold">PERFORMAX</h1>
+        <h1 class="text-center">High-Neck Zip-Front Track Jacket</h1>
+        <h1 class="text-center">Rs. 909</h1>
+        <h1 class="text-center text-yellow-400 font-semibold">
+          Rs. 1,299 (30% off)
+        </h1>
+        <h1 class="text-center">Price inclusive of all taxes</h1>
+      </div>
+      <div>
+        <img
+          class="ml-12"
+          src="https://assets.ajio.com/medias/sys_master/root/20210601/12B3/60b53b0daeb269a9e3cebc4f/performax-black-hoodies-&-tracks-quickdry-zip-front-jacket.jpg"
+        />
+        <h1 class="text-center text-yellow-400 font-semibold">PERFORMAX</h1>
+        <h1 class="text-center">High-Neck Zip-Front Track Jacket</h1>
+        <h1 class="text-center">Rs. 909</h1>
+        <h1 class="text-center text-yellow-400 font-semibold">
+          Rs. 1,299 (30% off)
+        </h1>
+        <h1 class="text-center">Price inclusive of all taxes</h1>
+      </div>
+      <div>
+        <img
+          class="ml-12"
+          src="https://assets.ajio.com/medias/sys_master/root/20210415/UNqf/6078567af997dd7b64b2f7b6/performax-olive-hoodies-&-tracks-zip-front-training-jacket.jpg"
+        />
+        <h1 class="text-center text-yellow-400 font-semibold">PERFORMAX</h1>
+        <h1 class="text-center">High-Neck Zip-Front Track Jacket</h1>
+        <h1 class="text-center">Rs. 909</h1>
+        <h1 class="text-center text-yellow-400 font-semibold">
+          Rs. 1,299 (30% off)
+        </h1>
+        <h1 class="text-center">Price inclusive of all taxes</h1>
+      </div>
+      <div>
+        <img
+          class="ml-12"
+          src="https://assets.ajio.com/medias/sys_master/root/20210415/z5ZG/607858d3aeb269a9e39270a4/performax-black-hoodies-&-tracks-zip-front-training-jacket.jpg"
+        />
+        <h1 class="text-center text-yellow-400 font-semibold">PERFORMAX</h1>
+        <h1 class="text-center">High-Neck Zip-Front Track Jacket</h1>
+        <h1 class="text-center">Rs. 909</h1>
+        <h1 class="text-center text-yellow-400 font-semibold">
+          Rs. 1,299 (30% off)
+        </h1>
+        <h1 class="text-center">Price inclusive of all taxes</h1>
+      </div>
+    </div>
+    <div class="mt-8">
+      <div class="ml-60"><img src="./images/img6.PNG" alt="  " /></div>
+    </div>
+    <div>
+      <img
+        class="mt-10 mx-auto"
+        src="https://assets.ajio.com/medias/sys_master/root/20210415/z5ZG/607858d3aeb269a9e39270a4/performax-black-hoodies-&-tracks-zip-front-training-jacket.jpg"
+      />
+      <h1 class="text-center text-yellow-400 font-semibold">PERFORMAX</h1>
+      <h1 class="text-center">High-Neck Zip-Front Track Jacket</h1>
+      <h1 class="text-center">Rs. 909</h1>
+      <h1 class="text-center text-yellow-400 font-semibold">
+        Rs. 1,299 (30% off)
+      </h1>
+      <h1 class="text-center">Price inclusive of all taxes</h1>
+    </div>
+    <div class="mt-8" id="footer_division">
+      <!-- <div class="ml-60"><img src="images/img7.png" alt="  " /></div> -->
+    </div>
+  </body>
+  <script type="module">
+    import navbar from "./components/navbar.js";
+    let navbar_division = document.getElementById("navbar_division");
+    navbar_division.innerHTML = navbar();
+  </script>
+  <script type="module">
+    import footer from "./components/footer.js";
+    let footer_division = document.getElementById("footer_division");
+    footer_division.innerHTML = footer();
+  </script>
+  <link rel="stylesheet" href="./styles/navbar.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+  <link rel="stylesheet" href="./styles/productDetailsPage.css" />
+  <script src="./scripts/navbar.js"></script>
+  <script src="./scripts/singleProductView.js"></script>
+  <script>
+    let id= window.location.hash;
+    let new_id=id.split("=")[1];
+    console.log(new_id);
+    getdata(new_id)
+  </script>
+</html>

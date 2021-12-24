@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJIO</title>
+    <link rel="icon" href="https://assets.ajio.com/static/img/favicon.ico">   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: Lora;
+        }
+        #shopping {
+            width: 100%;
+            display: flex;
+            margin-top: 85px;
+            flex-direction: row;
+            background-color: rgb(232, 234, 235);
+            color: black;
+        }
+        #req{
+            width: 50%;
+            margin-left: 15%;
+            padding: 10px;
+            font-weight: 600;
+        }
+        #continue button{
+            width:200%;
+            padding: 10px;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 10px;
+            background-color: #D5a249;
+            border:none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button :hover{
+            background-color:  #f0c884;
+        }
+        #sum{
+            width: 70%;
+            margin-left: 15%;
+            padding: 10px;
+            color:silver;
+            font-size: 18px ;
+            font-weight: 600;  
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #prod{
+            width: 40%;
+            margin-left: 15%;
+            padding: 20px 20px 20px 10px ;
+        }
+        .mdiv{
+            border: 0.5px solid #ECEFF1;
+            display: grid;
+            grid-template-columns: 20% 40% 40%;
+            margin:15px 15px 15px 0px;
+            
+        }
+        .mdiv > img{
+            width: 80%;
+        }
+        #quan,#qu{
+            color: silver;
+        }
+        #prodName{
+            font-size: 15px;
+            font-weight: 450;
+            padding-top: 15px;
+        }
+        .priceDiv{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-weight: 500;
+            
+        }
+        .saving {
+            padding: 10px 0px;
+            padding-left: 22px;
+            font-size: 15px;
+        }
+        .dis{
+            text-decoration: line-through;
+            color: #D5a249;
+            font-size: 15px;
+        }
+        .discount {
+            margin-left: 20px;
+            margin-top: 3px;
+            text-decoration: line-through;
+            color: #D5a249;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .finalPrice {
+            margin-left: 20px;
+            padding:0 10px;
+            background-color:#e1ecf1;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar_division">
+       
+    </div>
+    <div id="shopping">
+        <div id="req">
+        <p>Thank you for shopping , your order id #FL032322323<span id="rand"></span> is confirmed.</p>
+        <p>We expect to deliver your order within 3-5 Business Days</p>
+        </div>
+        <div id="continue">
+            <button onclick="getHome()">CONTINUE SHOPPING</button>
+        </div>
+    </div>
+    <p id="sum">Order Summary</p>
+    <div id="prod">
+
+    </div>
+    <div id="footer_division">
+  
+    </div>
+</body>
+</html>
+<script>
+    let ran = document.getElementById('rand')
+    let count=0;
+    ran.textContent=Math.floor(Math.random(10)*1000);
+    function getHome(){
+        window.location.href="/"
+    }
+    var da=[];
+    function getData(){
+        var count=0;
+        var bagdiscount=0;
+        let discount=0;
+        var bagtotal=0;
+        fetch('http://localhost:2345/cart')
+        .then(response => response.json())
+        .then(data=>{
+            let d = data.cart;
+            d.forEach((el)=>{
+                
+                da.push(el);
+            });
+            da.forEach((el)=>{
+                showProd(el.product);
+            })
+        })
+        .catch(e=>console.log("e",e));
+    }
+    getData();
+    let parent = document.getElementById('prod')
+    function showProd(product){
+            let mdiv = document.createElement('div');
+            mdiv.setAttribute('class','mdiv')
+            let img = document.createElement("img");
+            img.src=product.display_img;
+            let p = document.createElement('span');
+            p.setAttribute('id','prodName')
+            p.textContent=product.brand+" - "+product.name;
+            let selectQuan = document.createElement('select');
+            selectQuan.setAttribute('id','quantitySel')
+            let label1 = document.createElement('label');
+            label1.setAttribute('class' ,'labelClass')
+            label1.textContent="";
+            let selectSize = document.createElement('select')
+            console.log('selectQuan',selectQuan.value)
+            selectSize.setAttribute('id','sizeSel')
+            let label2 = document.createElement('label');
+            label2.setAttribute('class' ,'label2Class')
+            label2.textContent=""
+            let pdiv = document.createElement('div');
+            pdiv.setAttribute('class','priceDiv')
+            let saving = document.createElement('span');
+            saving.setAttribute('class','saving')
+            saving.textContent='Savings : ';
+
+            let span = document.createElement('span');
+            span.textContent = "Rs."+Math.floor (product.MRP * product.discount ) /100;
+            span.setAttribute('class','dis')
+            let discount = document.createElement('span');
+            let br = document.createElement('br');
+            discount.setAttribute('class','discount');
+            discount.textContent = product.MRP;
+            let sp = document.createElement('span');
+            sp.textContent = " ( "+ product.discount + "% )";
+            let finalPrice = document.createElement('span');
+            finalPrice.setAttribute('class','finalPrice');
+            let br1 = document.createElement('br');
+            finalPrice.textContent="Rs. "+product.offer_price;
+            pdiv.append(saving,span,br,discount,sp,br1,finalPrice);
+            mdiv.append(img,p,pdiv);
+            parent.append(mdiv);
+            count++;
+    }
+</script>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    let navbar_division = document.getElementById("navbar_division");
+    navbar_division.innerHTML = navbar();
+</script>
+<script type="module">
+    import footer from "./components/footer.js";
+    let footer_division = document.getElementById("footer_division");
+    footer_division.innerHTML = footer();
+</script>
+<link rel="stylesheet" href="./styles/navbar.css">
+<link rel="stylesheet" href="./styles/footer.css">
+<script src="./scripts/navbar.js"></script>
+<link rel="stylesheet" href="./styles/productDetailsPage.css" />
