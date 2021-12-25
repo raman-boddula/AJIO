@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post("/",async(req,res)=>{
         try {
-            console.log("req.body",req.body)
+            // console.log("req.body",req.body)
             const cart = await Cart.create(req.body);
             return res.status(201).json({ cart });
         }

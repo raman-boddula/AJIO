@@ -12,8 +12,8 @@ const newToken = (user) => {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientID:"791184101082-qi0o6ed5kulg9ueknml09l46q7uf270a.apps.googleusercontent.com",
+      clientSecret: "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",
       callbackURL: "http://localhost:2345/auth/google/callback",
       userProfileURL: "https://**www**.googleapis.com/oauth2/v3/userinfo",
       passReqToCallback: true,

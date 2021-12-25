@@ -165,7 +165,7 @@ function navbar() {
     <div>
         <div>
             <div>
-                <img src="./Images/facebook_icon.png">
+                <img src="./images/facebook_icon.png">
             </div>
             <div>
                 <h5>FACEBOOK</h5>
@@ -173,7 +173,7 @@ function navbar() {
         </div>
         <div id="googleOauth">
             <div>
-                <img src="./Images/google_icon.png">
+                <img src="./images/google_icon.png">
             </div>
             <div>
                 <h5>GOOGLE</h5>
