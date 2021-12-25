@@ -3,14 +3,14 @@ const cors = require("cors");
 const path = require('path');
 const bodyParser = require("body-parser")
 const app = express();
-const passport = require("./src/configs/passport");
+const passport = require("./configs/passport");
 
-const registerController= require("./src/controllers/register.controller")
-const loginController = require("./src/controllers/login.controller")
-const productController = require("./src/controllers/product.controller");
-const wishlistController = require("./src/controllers/wishlist.controller")
-const cartController = require("./src/controllers/cart.controller");
-const userController=require("./src/controllers/user.controller");
+const registerController= require("./controllers/register.controller")
+const loginController = require("./controllers/login.controller")
+const productController = require("./controllers/product.controller");
+const wishlistController = require("./controllers/wishlist.controller")
+const cartController = require("./controllers/cart.controller");
+const userController=require("./controllers/user.controller");
 
 
 app.use(express.json());
